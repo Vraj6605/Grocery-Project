@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0px;
+      background-color: rgb(255, 255, 255);
+    }
+
+    .navbar {
+      height: 40px;
+      background-color: #7eff83;
+      overflow: hidden;
+      padding: 10px;
+      border-bottom: 2px solid #ddd;
+      border: 2px solid black;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      text-align: center;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    form {
+      max-width: 400px;
+      margin: auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .error {
+      color: red;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <h3>Grocery Login</h3>
+  </div>
+  <h2>Login</h2>
+
+  <form id="loginForm">
+    <label for="loginUsername">Username:</label>
+    <input type="text" id="loginUsername" name="username" required>
+
+    <label for="loginPassword">Password:</label>
+    <input type="password" id="loginPassword" name="password" required>
+
+    <input type="submit" value="Login">
+  </form>
+
+  <p id="loginError" class="error">Incorrect username or password.</p>
+
+  <script>
+    // JavaScript code
+    const loginForm = document.getElementById('loginForm');
+
+    // Login form submit event listener
+    loginForm.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Perform login logic (e.g., validate credentials, authenticate user)
+      const username = loginForm.username.value;
+      const password = loginForm.password.value;
+
+      // Example: Simulate login success if username is "user" and password is "password"
+      if (username === 'user' && password === 'password') {
+        alert('Login successful!'); // Replace with your own logic
+      } else {
+        document.getElementById('loginError').style.display = 'block';
+      }
+    });
+  </script>
+</body>
+
+</html>
